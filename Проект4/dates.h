@@ -18,12 +18,7 @@ public:
 	int getYear() { return year; }
 
 	bool leap(int year);
-	bool sameDate(int day, int month, int year)
-	{
-		if (this->day == day && this->month == month && this->year == year) 
-			return true;
-		else false;
-	}
+	bool sameDate(int day, int month, int year);
 	bool operator==(date obj);
 
 	date operator+=(int day);
