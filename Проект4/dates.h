@@ -22,6 +22,11 @@ public:
 	bool operator==(date obj);
 
 	date operator+=(int day);
+	date operator-=(int day);
+
+	date operator+(date obj);
+	date operator-(date obj);
+
 	
 };
 

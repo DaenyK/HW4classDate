@@ -3,15 +3,15 @@
 void main()
 {
 	setlocale(LC_ALL, "Rus");
-	short nz;
+	short nz, answer;
 	int year, month, day;
 	char s;
 
 	do
 	{
 		cout << "1 - Проверка на равенство двух дат(операция = =)" << endl
-			<< "2 - Изменение даты на указанное число дней(операции +=, -=)" << endl
-			<< "3 - Сложение и вычитание двух дат(операции + , -)" << endl
+			<< "2,3 - Изменение даты на указанное число дней(операции +=, -=)" << endl
+			<< "4,5 - Сложение и вычитание двух дат(операции + , -)" << endl
 			<< "введите номер задания, либо 0 - для выхода: ";
 		cin >> nz;
 		system("cls");
@@ -29,7 +29,6 @@ void main()
 			date one(day, month, year);
 			cout << "enter the second date(12.12.2012): "; cin >> day >> s >> month >> s >> year;
 			date two(day, month, year);
-			//поставить цикл на правильное написание даты
 			int result = (one == two);
 			if (result == 1)
 				cout << "\nэти две даты одинаковые\n";
@@ -43,11 +42,34 @@ void main()
 			date one(day, month, year);
 			cout << "введите количество дней, чтобы изменить дату на указанное число дней: ";
 			cin >> num;
-			//one += num;
+			one += num;
 			cout << one.getDay() << "." << one.getMonth ()<< "." << one.getYear ()<< endl;
 		}break;
 
 		case 3:
+		{
+			int num;
+			cout << "введите дату(н. 12.12.2012): "; cin >> day >> s >> month >> s >> year;
+			date one(day, month, year);
+			cout << "введите количество дней, чтобы изменить дату на указанное число дней: ";
+			cin >> num;
+			one -= num;
+			cout << one.getDay() << "." << one.getMonth() << "." << one.getYear() << endl;
+		}break;
+
+		case 4 :
+		{
+			cout << "enter the first date(12.12.2012): "; cin >> day >> s >> month >> s >> year;
+			date one(day, month, year);
+			cout << "enter the second date(12.12.2012): "; cin >> day >> s >> month >> s >> year;
+			date two(day, month, year);
+			date result = one + two;
+			cout << result.getDay() << "." << result.getMonth() << "." << result.getYear() << endl;
+
+
+		}break;
+		
+		case 5:
 		{
 
 		}break;
@@ -55,7 +77,10 @@ void main()
 		}
 
 		cout << endl;
-	} while (nz != 0);
+		cout << "хотите продолжить?1/0 ";
+		cin >> answer;
+		system("cls");
+	} while (answer!=0);
 	system("pause");
 
 }
