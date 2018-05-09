@@ -65,13 +65,16 @@ void main()
 			date two(day, month, year);
 			date result = one + two;
 			cout << result.getDay() << "." << result.getMonth() << "." << result.getYear() << endl;
-
-
 		}break;
 		
 		case 5:
 		{
-
+			cout << "enter the first date(12.12.2012): "; cin >> day >> s >> month >> s >> year;
+			date one(day, month, year);
+			cout << "enter the second date(12.12.2012): "; cin >> day >> s >> month >> s >> year;
+			date two(day, month, year);
+			date result = one - two;
+			cout << result.getDay() << "." << result.getMonth() << "." << result.getYear() << endl;
 		}break;
 
 		}
